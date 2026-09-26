@@ -1,0 +1,44 @@
+---
+import { CAFE_CONFIG } from '../config.js';
+---
+
+<footer class="bg-[#070707] border-t border-white/10 pt-16 pb-12 px-6 text-white text-xs">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 pb-16">
+    <div class="md:col-span-5 space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 border border-white flex items-center justify-center font-bold">SC</div>
+        <span class="font-bold tracking-widest text-base uppercase">{CAFE_CONFIG.brand.name}</span>
+      </div>
+      <p class="text-gray-400 max-w-sm text-xs leading-relaxed">
+        {CAFE_CONFIG.brand.description}
+      </p>
+    </div>
+
+    <div class="md:col-span-3 space-y-3">
+      <span class="font-bold uppercase text-white block">Navigation</span>
+      <ul class="space-y-2 text-gray-400">
+        <li><a href="#menu" class="hover:text-[#d58c3d]">Craft Menu</a></li>
+        <li><a href="#locations" class="hover:text-[#d58c3d]">Locations & Hours</a></li>
+        <li><a href="#instagram" class="hover:text-[#d58c3d]">Instagram Showcase</a></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-4 space-y-3">
+      <span class="font-bold uppercase text-white block">Connect</span>
+      <p class="text-gray-400">Direct Contact: {CAFE_CONFIG.brand.phone}</p>
+      <p class="text-gray-400">Erbil, Kurdistan Region, Iraq</p>
+      <div class="flex gap-4 pt-2">
+        {CAFE_CONFIG.hero.socials.map((social) => (
+          <a href={social.url} target="_blank" rel="noopener noreferrer" class="text-[#d58c3d] font-bold hover:underline">
+            {social.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500 text-[10px]">
+    <p>© {new Date().getFullYear()} {CAFE_CONFIG.brand.name}. All rights reserved.</p>
+    <p>Handcrafted Specialty Coffee in Erbil</p>
+  </div>
+</footer>

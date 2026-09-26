@@ -1,0 +1,62 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Shar Coffee | شار كوفي - Specialty Coffee in Erbil", 
+  description = "Shar Coffee in Erbil - Handcrafted specialty coffee, signature Nutella shakes, and craft drinks. Open 07:00 AM - 01:00 AM across 3 locations." 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Geist:wght@300;400;600;800&family=Onest:wght@300;400;600;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#070707] text-white font-space selection:bg-[#d58c3d] selection:text-black overflow-x-hidden antialiased">
+    <slot />
+
+    <script>
+      import { applyViewportGrid } from '../utils/motion.js';
+      applyViewportGrid();
+      window.addEventListener('resize', applyViewportGrid);
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg-dark: #070707;
+    --bg-light: #f1f1ef;
+    --text-light: #ffffff;
+    --text-dark: #070707;
+    --accent-amber: #d58c3d;
+    --espresso-swirl: #171715;
+    --font-space-mono: "Space Mono", monospace;
+    --font-allura: "Allura", cursive;
+    --font-geist: "Geist", sans-serif;
+  }
+
+  html { font-size: 16px; }
+  @media (max-width: 1439.98px) {
+    html { font-size: calc(16px - (1440px - 100vw) / 128.57); }
+  }
+  @media (max-width: 1023.98px) {
+    html { font-size: 16px; }
+  }
+  @media (max-width: 639.98px) {
+    html { font-size: 4.444444vw; }
+  }
+</style>

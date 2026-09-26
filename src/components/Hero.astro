@@ -1,0 +1,86 @@
+---
+import { CAFE_CONFIG } from '../config.js';
+---
+
+<section class="relative min-h-screen flex flex-col justify-between pt-28 pb-12 px-6 overflow-hidden bg-[#070707] text-white">
+  <!-- Dynamic Glowing Background Ring -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#d58c3d]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto z-10">
+    <div class="lg:col-span-7 space-y-6">
+      <div class="inline-flex items-center gap-2 border border-[#d58c3d]/40 bg-[#171715] px-3 py-1 rounded-full text-xs text-[#d58c3d]">
+        <span class="w-2 h-2 rounded-full bg-[#d58c3d] animate-pulse"></span>
+        <span>{CAFE_CONFIG.hero.eyebrow}</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight uppercase leading-[0.95]">
+        {CAFE_CONFIG.hero.headlineLine1} 
+        <span class="block font-allura text-5xl sm:text-7xl md:text-8xl text-[#d58c3d] lowercase font-normal -mt-2 sm:-mt-4">
+          {CAFE_CONFIG.hero.scriptWord}
+        </span>
+      </h1>
+
+      <p class="text-gray-400 max-w-xl text-sm sm:text-base leading-relaxed">
+        {CAFE_CONFIG.hero.ledeText}
+      </p>
+
+      <div class="pt-4 flex flex-wrap items-center gap-6">
+        <a href={CAFE_CONFIG.hero.ctaLink} class="group relative inline-flex items-center gap-3 bg-[#d58c3d] text-black font-bold px-8 py-4 text-xs uppercase tracking-widest hover:bg-white transition-all overflow-hidden">
+          <span>{CAFE_CONFIG.hero.ctaText}</span>
+          <svg viewBox="0 0 12 13" fill="none" class="w-3 h-3 transition-transform group-hover:translate-x-1">
+            <path d="M11.95 7.26L6.22 0.26C5.87 -0.08 5.3 -0.08 4.94 0.26C4.59 0.61 4.59 1.18 4.94 1.53L10.04 6.62L4.94 11.71C4.59 12.07 4.59 12.64 4.94 12.99C5.3 13.34 5.87 13.34 6.22 12.99L11.95 7.26ZM0 6.62V7.52H11.31V6.62V5.72H0V6.62Z" fill="currentColor"/>
+          </svg>
+        </a>
+
+        <div class="flex items-center gap-3 border-l border-white/20 pl-6">
+          <div class="flex text-[#d58c3d] text-sm">
+            ★★★★★
+          </div>
+          <div class="text-xs">
+            <span class="font-bold block">{CAFE_CONFIG.brand.rating} / 5.0</span>
+            <span class="text-gray-400">Google Reviews</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Hero Image Card Showcase -->
+    <div class="lg:col-span-5 relative">
+      <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+        <img 
+          src="https://lh3.googleusercontent.com/grass-cs/AABkmLcxmIV7GLdIzj6ugLgfXr-l09eksCxIuHHM0l0Gmg77ZnpZBM_RuK2j24tmyOND2yXGZqG6fbsshbyLovghs98Ze_7islQxeP2SOsVdHBbmtgjk2rK-upmz7IK0G5cAi4MWiBDu6Q=w800" 
+          alt="Shar Coffee Atmosphere" 
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+        <div class="absolute bottom-6 left-6 right-6 p-4 backdrop-blur-md bg-black/60 border border-white/10 rounded-xl flex items-center justify-between">
+          <div>
+            <span class="text-[10px] text-[#d58c3d] uppercase tracking-widest font-bold">// FEATURED DRINK</span>
+            <h3 class="font-bold text-sm">Nutella Signature Shake</h3>
+          </div>
+          <span class="text-xs font-bold bg-[#d58c3d] text-black px-2.5 py-1 rounded">7,000 IQD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto w-full pt-12 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-xs text-gray-400">
+    <div>
+      <span class="block text-white font-bold uppercase">Opening Hours</span>
+      <span>07:00 AM – 01:00 AM Daily</span>
+    </div>
+    <div>
+      <span class="block text-white font-bold uppercase">Main Location</span>
+      <span>60m Street, Erbil</span>
+    </div>
+    <div>
+      <span class="block text-white font-bold uppercase">Direct Phone</span>
+      <span>0751 255 0255</span>
+    </div>
+    <div>
+      <span class="block text-white font-bold uppercase">Instagram</span>
+      <span>@shar.coffee</span>
+    </div>
+  </div>
+</section>

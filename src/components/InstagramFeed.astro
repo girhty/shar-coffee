@@ -1,0 +1,51 @@
+---
+const instagramData = {
+  username: "shar.coffee",
+  name: "Shar Coffee - شار كوفي",
+  followers: "12K+",
+  posts: [
+    {
+      caption: "Spiderman Iced Caffeine ☕🧊🕸️ #spiderman #sharcoffee",
+      url: "https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/774362712_18116922137312040_1041530464350999307_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=u4VeylQKjQMQ7kNvwFZC7Te&_nc_oc=Adrd12QeX6QWBsyf3h6SgxHgX4FHFWnXw4YMU3UeaNU9UmZoJ97rOfWrIjXil-NOMkc&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=SlXaewPkmC6F3J-NdQQ7Ug&_nc_ss=7ca8c&oh=00_AQKVJfTGU2FED-8GM2A8rtYwXj_ozAW9mvx6dpl-ds4t_w&oe=6ABE06DE"
+    },
+    {
+      caption: "Nutella Shake now available 🍫🥛 #sharcoffee #erbil",
+      url: "https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/731093811_18112069577312040_2934906529178631048_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=DZffdiNIYcIQ7kNvwEdq346&_nc_oc=Adp3A9uOJjO6hJUH6j6iuunzTuxwEiNh6iWm4R_xSEmvYm6Eo9Q5uCw442B0_NBqViw&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=SlXaewPkmC6F3J-NdQQ7Ug&_nc_ss=7ca8c&oh=00_AQIVcVRBvPegp5Lqr3-hDhN_l75UmLGVNU2ry3WScVRbZA&oe=6ABDF21F"
+    },
+    {
+      caption: "Three favorites. One destination. ☕✨",
+      url: "https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/727393548_18110371010312040_2436329164617335054_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=YwLlU37MClwQ7kNvwHjqwdX&_nc_oc=AdrPvkVRu0QQ0lCp2J3lPt7BB4oTn1wpAZ1NBzTFymErWaSmdVkoQ8xzxBUJEbNdsNc&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=SlXaewPkmC6F3J-NdQQ7Ug&_nc_ss=7ca8c&oh=00_AQKaLKmVHtO-lejvvzUdpl3VR0G12HILT_PPw82nJLK_Ag&oe=6ABE17C3"
+    },
+    {
+      caption: "Good coffee, Good mood ☕🤎",
+      url: "https://lh3.googleusercontent.com/grass-cs/AABkmLfXk5bvZu0dQPRulk4kjKR0lrguen3mjS1GZbi674JApWZPJHJpQWf_WShzFCkVWlNZofIb9cCp8dBT_Ok_3moNGU2OqJbM7EJ58KG2wT37_-QQG-tdySiBVWGKHBAhjkMKqug=w600"
+    }
+  ]
+};
+---
+
+<section id="instagram" class="py-24 px-6 bg-[#070707] border-t border-white/10">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6">
+      <div>
+        <span class="text-xs font-bold text-[#d58c3d] tracking-widest uppercase">// INSTAGRAM COMMUNITY</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold uppercase mt-1">@{instagramData.username}</h2>
+      </div>
+      <a href="https://instagram.com/shar.coffee" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 border border-white/20 px-6 py-3 text-xs uppercase tracking-widest hover:border-[#d58c3d] hover:text-[#d58c3d] transition-all w-fit">
+        <span>Follow Community ({instagramData.followers})</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {instagramData.posts.map((post) => (
+        <a href="https://instagram.com/shar.coffee" target="_blank" rel="noopener noreferrer" class="group relative aspect-square rounded-xl overflow-hidden border border-white/10 bg-[#171715]">
+          <img src={post.url} alt="Instagram Post" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-xs">
+            <p class="text-white line-clamp-3 font-sans">{post.caption}</p>
+            <span class="mt-3 text-[#d58c3d] font-bold uppercase tracking-wider text-[10px]">View on Instagram →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
